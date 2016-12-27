@@ -12,6 +12,8 @@
 - repo: itchyny/vim-parenmatch
 - repo: thinca/vim-localrc
 - repo: christoomey/vim-tmux-navigator
+- repo: osyo-manga/vim-anzu
+  hook_source: let g:anzu_status_format = 'match %i of %l'
 
 # Lazy Loading
 # ==========================================
@@ -192,10 +194,6 @@
   hook_add:
     autocmd MyAutoCmd BufEnter *.js*,*.html,*.css,.tern*
       execute 'Findent! --no-warnings'
-
-- repo: osyo-manga/vim-anzu
-  on_map: { nv: <Plug> }
-  hook_source: let g:anzu_status_format = 'match %i of %l'
 
 - repo: rhysd/committia.vim
   on_path: COMMIT_EDITMSG
