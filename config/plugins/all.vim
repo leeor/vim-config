@@ -270,25 +270,42 @@ if dein#tap('vim-go') "{{{
 endif
 
 "}}}
-if dein#tap('vim-gita') "{{{
-	nnoremap <silent> <leader>gs :<C-u>Gita status<CR>
-	nnoremap <silent> <leader>gc :<C-u>Gita commit<CR>
-	nnoremap <silent> <leader>ga :<C-u>Gita commit --amend<CR>
-	nnoremap <silent> <leader>gd :<C-u>Gita diff<CR>
-	nnoremap <silent> <leader>gb :<C-u>Gita browse<CR>
-	nnoremap <silent> <leader>gl :<C-u>Gita blame<CR>
-	nnoremap <silent> <leader>gp :<C-u>Gita push<CR>
+if dein#tap('vim-fugitive') "{{{
 
-	autocmd MyAutoCmd FileType gita-status
-		\ silent! nunmap <buffer> <C-L> |
-		\ nmap <buffer> <C-R> <Plug>(gita-common-redraw) |
-		\ nmap <buffer> cc    <Plug>(gita-commit-open) |
-		\ nmap <buffer> cA    <Plug>(gita-commit-open-amend) |
-		\ nmap <buffer> dg    <Plug>(gita-diff-right) |
-		\ nmap <buffer> sg    <Plug>(gita-edit-right)
+nnoremap <Leader>gn :Unite output:echo\ system("git\ init")<CR>
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gw :Gwrite<CR>
+nnoremap <Leader>go :Gread<CR>
+nnoremap <Leader>gR :Gremove<CR>
+nnoremap <Leader>gm :Gmove<Space>
+nnoremap <Leader>gc :Gcommit<CR>
+nnoremap <Leader>ga :Gcommit --amend<CR>
+nnoremap <Leader>gd :Gdiff<CR>
+nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>gB :Gbrowse<CR>
+nnoremap <Leader>gp :Git! push<CR>
+nnoremap <Leader>gP :Git! pull<CR>
+nnoremap <Leader>gi :Git!<Space>
+nnoremap <Leader>ge :Gedit<CR>
+nnoremap <Leader>gE :Gedit<Space>
+nnoremap <Leader>gl :exe "silent Glog <Bar> Unite -no-quit
+            \ quickfix"<CR>:redraw!<CR>
+nnoremap <Leader>gL :exe "silent Glog -- <Bar> Unite -no-quit
+            \ quickfix"<CR>:redraw!<CR>
+"nnoremap <Leader>gg :exe 'silent Ggrep -i '.input("Pattern: ")<Bar>Unite
+"            \ quickfix -no-quit<CR>
+"nnoremap <Leader>ggm :exe 'silent Glog --grep='.input("Pattern: ").' <Bar>
+"            \Unite -no-quit quickfix'<CR>
+"nnoremap <Leader>ggt :exe 'silent Glog -S='.input("Pattern: ").' <Bar>
+"            \Unite -no-quit quickfix'<CR>
+"
+"nnoremap <Leader>ggc :silent! Ggrep -i<Space>
+
+" for diffmode
+"noremap <localleader>du :diffupdate<CR>
 endif
 
-"}}}
+" }}}
 if dein#tap('caw.vim') "{{{
 	nmap gc <Plug>(caw:prefix)
 	xmap gc <Plug>(caw:prefix)
