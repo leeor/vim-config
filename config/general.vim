@@ -123,20 +123,20 @@ set cpoptions-=m    " showmatch will wait 0.5s or until a char is typed
 " }}}
 " Behavior {{{
 " --------
-set nowrap                      " No wrap by default
-set linebreak                   " Break long lines at 'breakat'
-set breakat=\ \	;:,!?           " Long lines break chars
-set nostartofline               " Cursor in same column for few commands
-set whichwrap+=h,l,<,>,[,],~    " Move to following line on certain keys
-set splitbelow splitright       " Splits open bottom right
-set switchbuf=useopen,usetab    " Jump to the first open window in any tab
-set switchbuf+=vsplit           " Switch buffer behavior to vsplit
-set backspace=indent,eol,start  " Intuitive backspacing in insert mode
-set diffopt=filler,iwhite       " Diff mode: show fillers, ignore white
-set showfulltag                 " Show tag and tidy search in completion
-set complete=.                  " No wins, buffs, tags, include scanning
-set completeopt=menuone         " Show menu even for one item
-set completeopt+=noselect       " Do not select a match in the menu
+set nowrap                         " No wrap by default
+set linebreak                      " Break long lines at 'breakat'
+set breakat=\ \	;:,!?              " Long lines break chars
+set nostartofline                  " Cursor in same column for few commands
+set whichwrap+=h,l,<,>,[,],~       " Move to following line on certain keys
+set splitbelow splitright          " Splits open bottom right
+set switchbuf=useopen,usetab       " Jump to the first open window in any tab
+set switchbuf+=vsplit              " Switch buffer behavior to vsplit
+set backspace=indent,eol,start     " Intuitive backspacing in insert mode
+set diffopt=filler,iwhite,vertical " Diff mode: show fillers, ignore white
+set showfulltag                    " Show tag and tidy search in completion
+set complete=.                     " No wins, buffs, tags, include scanning
+set completeopt=menuone            " Show menu even for one item
+set completeopt+=noselect          " Do not select a match in the menu
 if has('patch-7.4.775')
 	set completeopt+=noinsert
 endif
