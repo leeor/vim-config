@@ -14,7 +14,6 @@ if dein#tap('denite.nvim') "{{{
 	nnoremap <silent> [unite]j  :<C-u>Denite file_point<CR>
 	nnoremap <silent> [unite]h  :<C-u>Denite neoyank -default-action=cd<CR>
 	nnoremap <silent> [unite]k  :<C-u>Denite mark -buffer-name=list<CR>
-	nnoremap <silent> [unite]mu :<C-u>Denite mpc -buffer-name=mpc<CR>
 	nnoremap <silent> [unite]/  :<C-u>Denite line<CR>
 	nnoremap <silent> [unite]*  :<C-u>DeniteCursorWord line<CR>
 
